@@ -1,0 +1,31 @@
+#top {
+	background-color: #545252;
+	height: 60px;
+}
+
+#loginbutton {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+}
+
+#content {
+	height: 580px;
+}
+
+#textcontent {
+	position: absolute;
+	font: italic bold 30px Georgia, serif;
+	margin: auto;
+	padding-top: 50px;
+	padding-left: 30px;
+	background-color: #FFFFFF;
+}
+
+#bookimage {
+	height: 580px;
+	background-color: #FFFFFF;
+	background-image: url("images/book_stacks.jpg");
+	background-repeat: no-repeat;
+	background-position: right;
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+	<f:facet name="last">
+		<h:outputStylesheet library="css" name="mystyle.css" />
+	</f:facet>
+
+	<p:ajaxStatus onstart="statusDialog.show();"
+		onsuccess="statusDialog.hide();" />
+
+	<p:dialog modal="true" widgetVar="statusDialog" header="Status"
+		draggable="false" closable="false">
+		<p:graphicImage value="../resources/images/ajax-loading-bar.gif" />
+	</p:dialog>
+
+
+	<h:form>
+
+		<div id="container">
+
+			<div id="top">
+				<div id="loginbutton">
+					<p:commandButton onclick="dlg.show()"
+						actionListener="${loginBean.clearValues}"
+						update=":dialogForm:panelData" value="Log in" />
+
+					<p:commandButton onclick="dlg.show()"
+						actionListener="${loginBean.clearValues}"
+						update=":dialogForm:panelData" value="Sign up" />
+				</div>
+			</div>
+
+			<div id="content">
+				<div id="textcontent">Book Rating System</div>
+				<div id="bookimage"></div>
+			</div>
+
+		</div>
+
+
+	</h:form>
+
+	<h:form id="dialogForm">
+		<p:growl id="growl" showDetail="false" life="30000" />
+
+		<p:dialog id="dialog" header="Login" widgetVar="dlg" resizable="false"
+			modal="true">
+
+			<h:panelGrid id="panelData" columns="2" cellpadding="5">
+				<h:outputLabel for="username" value="Username:" />
+				<p:inputText value="#{loginBean.username}" id="username"
+					required="true" requiredMessage="Enter User name" label="username" />
+
+				<h:outputLabel for="password" value="Password:" />
+				<h:inputSecret value="#{loginBean.password}" id="password"
+					required="true" requiredMessage="Enter Password" label="password" />
+
+				<f:facet name="footer">
+					<p:commandButton id="loginButton" value="Login" update="growl"
+						action="#{loginBean.login}"
+						oncomplete="handleLoginRequest(xhr, status, args)" />
+				</f:facet>
+			</h:panelGrid>
+
+		</p:dialog>
+	</h:form>
+
+	<script type="text/javascript">
+		function handleLoginRequest(xhr, status, args) {
+			if (!args.loggedIn) {
+				dlg.jq.effect("shake", {
+					times : 5
+				}, 100);
+			} else {
+				dlg.hide();
+			}
+		}
+	</script>
+
+
+
+
+
+
+</h:body>
+</html>

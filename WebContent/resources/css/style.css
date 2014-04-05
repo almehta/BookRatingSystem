@@ -1,0 +1,120 @@
+#abc {
+	font: italic bold 40px Georgia, serif;
+	margin: auto;
+	padding-top: 80px;
+	padding-left: 30px;
+}
+
+body {
+	background-color: #FFFFFF;
+}
+
+#container {
+	width: 80pc;
+	margin: auto;
+	background-color: #FFFFFF;
+}
+
+p.headingtext {
+	font: italic bold 40px Georgia, serif;
+	margin: auto;
+	padding-top: 80px;
+	padding-left: 30px;
+}
+
+p.headingtext a {
+	text-decoration: none;
+	font-weight: bold;
+	font-family: Georgia, serif;
+	color: #000;
+}
+
+p.headingtext a:hover {
+	color: #0059FF;
+}
+
+p.contenttext {
+	font: italic bold 20px Georgia, serif;
+	margin: auto;
+	padding-top: 30px;
+	padding-left: 30px;
+}
+
+p.footertext {
+	margin: auto;
+	padding-top: 5px;
+	padding-left: 10px;
+	font: bold 15px Georgia, serif;
+}
+
+p.footertext a {
+	text-decoration: none;
+	font-weight: bold;
+	font-family: Georgia, serif;
+	color: #000;
+}
+
+p.footertext a:hover {
+	color: #0059FF;
+}
+
+#menu {
+	background-color: #000000;
+	height: 30px;
+}
+
+#nav {
+	width: 100%;
+	float: left;
+	margin: 0 0 0em 0;
+	padding: 0;
+	list-style: none;
+	background-color: #000000;
+	padding: 0;
+}
+
+#nav li {
+	float: left;
+	margin: 0 0 0em 0;
+}
+
+#nav li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: Georgia, serif;
+	border-right: 0px solid #ccc;
+	color: #fff;
+}
+
+#nav li a:hover {
+	color: #fff;
+	background-color: #0059FF;
+}
+
+#nav li a.active {
+	color: #fff;
+	background-color: #0059FF;
+}
+
+#left {
+	
+}
+
+#main {
+	height: 580px;
+	background-color: #FFFFFF;
+	background-image: url("images/book_stacks.jpg");
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+#right {
+	
+}
+
+#footer {
+	height: 30px;
+	background-color: #808080;
+}
