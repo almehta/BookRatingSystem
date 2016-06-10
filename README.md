@@ -1,4 +1,4 @@
 BookRatingSystem
 ================
 
-Book Rating System
+Application developed using Java server faces.
